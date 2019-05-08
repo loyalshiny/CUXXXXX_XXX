@@ -119,7 +119,7 @@ BOOL DlgSystemRcp::PreTranslateMessage(MSG* pMsg)
 		CString strTemp;
 		GetDlgItemText(nID, strTemp);
 		
-
+		//
 		
 		//if (nID >= 2035 && nID <= 2068)
 		//{
