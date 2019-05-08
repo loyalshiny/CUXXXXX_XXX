@@ -154,7 +154,6 @@ void DlgSystemSetting::OnButtonCheck()
 	if (gReadInterfaceFile("SYSTEM_SETTING", "USER") != "ENABLE")((CBtnEnh*)GetDlgItem(IDC_SYSTEM_USER))->ShowWindow(SW_HIDE);
 	if (gReadInterfaceFile("SYSTEM_SETTING", "IO_CHECK") != "ENABLE")((CBtnEnh*)GetDlgItem(IDC_SYSTEM_IO))->ShowWindow(SW_HIDE);
 	if (gReadInterfaceFile("SYSTEM_SETTING", "MOTOR_CHECK") != "ENABLE")((CBtnEnh*)GetDlgItem(IDC_SYSTEM_MOTOCHECK))->ShowWindow(SW_HIDE);
-	if (gReadInterfaceFile("SYSTEM_SETTING", "COMMUNICATION") != "ENABLE")((CBtnEnh*)GetDlgItem(IDC_SYSTEM_COMM))->ShowWindow(SW_HIDE);
 	if (gReadInterfaceFile("SYSTEM_SETTING", "TAPE") != "ENABLE")((CBtnEnh*)GetDlgItem(IDC_SYSTEM_TAPE))->ShowWindow(SW_HIDE);
 
 	if (SystemINIFiles.m_strLanguage == "ENGLISH")
@@ -167,7 +166,6 @@ void DlgSystemSetting::OnButtonCheck()
 		((CBtnEnh*)GetDlgItem(IDC_SYSTEM_USER))->SetCaption("USER");
 		((CBtnEnh*)GetDlgItem(IDC_SYSTEM_IO))->SetCaption("I/O CHECK");
 		((CBtnEnh*)GetDlgItem(IDC_SYSTEM_MOTOCHECK))->SetCaption("MOTOR CHECK");
-		((CBtnEnh*)GetDlgItem(IDC_SYSTEM_COMM))->SetCaption("COMMUNICATION");
 		((CBtnEnh*)GetDlgItem(IDC_SYSTEM_TAPE))->SetCaption("TAPE SETTING");
 	}
 	else if (SystemINIFiles.m_strLanguage == "KOREAN")
@@ -180,7 +178,6 @@ void DlgSystemSetting::OnButtonCheck()
 		((CBtnEnh*)GetDlgItem(IDC_SYSTEM_USER))->SetCaption("사용자");
 		((CBtnEnh*)GetDlgItem(IDC_SYSTEM_IO))->SetCaption("I/O 체크");
 		((CBtnEnh*)GetDlgItem(IDC_SYSTEM_MOTOCHECK))->SetCaption("모터 체크");
-		((CBtnEnh*)GetDlgItem(IDC_SYSTEM_COMM))->SetCaption("통신환경");
 		((CBtnEnh*)GetDlgItem(IDC_SYSTEM_TAPE))->SetCaption("TAPE 설정");
 	}
 

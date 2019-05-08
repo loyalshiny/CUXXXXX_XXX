@@ -23,7 +23,6 @@
 #define IDD_DIALOG_SYSTEM_RCP           333
 #define IDD_DIALOG_SYSTEM_MOTOR         334
 #define IDD_DIALOG_SYSTEM_INTERFACE     335
-#define IDD_DIALOG_SYSTEM_COMM          336
 #define IDD_DIALOG_ERROR_DISPLAY        337
 #define IDD_DIALOG_BOX_WARNING          338
 #define IDD_DIALOG_LOGIN                339
@@ -143,6 +142,7 @@
 #define IDC_TOP_GEM7                    1030
 #define IDC_TOP_OPERATOR                1030
 #define IDC_TOP_LEVEL3                  1030
+#define IDC_BUT_COMM                    1030
 #define IDC_SELECT_ENTER                1031
 #define IDC_TOP_LIGHT2                  1031
 #define IDC_TOP_MONI1                   1031
@@ -313,7 +313,9 @@
 #define IDC_LOGIN_CANCEL                1111
 #define IDC_CONTROL1                    1114
 #define IDC_EZGEMCTRL                   1116
+#define IDC_CHECK1                      1116
 #define IDC_BUTTON_STOP                 1117
+#define IDC_RADIO1                      1117
 #define IDC_BUTTON_REMOTE               1118
 #define IDC_BUTTON_LOCAL                1119
 #define IDC_BUTTON_OFFLINE              1120
@@ -341,7 +343,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        350
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1116
+#define _APS_NEXT_CONTROL_VALUE         1118
 #define _APS_NEXT_SYMED_VALUE           310
 #endif
 #endif

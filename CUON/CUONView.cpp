@@ -171,6 +171,7 @@ void CCUONView::OnButtonCheck()
 	if (gReadInterfaceFile("MAIN", "CST") != "ENABLE")((CBtnEnh*)GetDlgItem(IDC_BUT_CST))->ShowWindow(SW_HIDE);
 	if (gReadInterfaceFile("MAIN", "SECS_GEM") != "ENABLE")((CBtnEnh*)GetDlgItem(IDC_BUT_GEM))->ShowWindow(SW_HIDE);
 	if (gReadInterfaceFile("MAIN", "CAMERA") != "ENABLE")((CBtnEnh*)GetDlgItem(IDC_BUT_CAMERA))->ShowWindow(SW_HIDE);
+	if (gReadInterfaceFile("MAIN", "COMMUNICATION") != "ENABLE")((CBtnEnh*)GetDlgItem(IDC_BUT_COMM))->ShowWindow(SW_HIDE);
 
 	if (SystemINIFiles.m_strLanguage == "ENGLISH")
 	{
@@ -182,6 +183,7 @@ void CCUONView::OnButtonCheck()
 		((CBtnEnh*)GetDlgItem(IDC_BUT_GEM))->SetCaption("SECS/GEM");
 		((CBtnEnh*)GetDlgItem(IDC_BUT_CAMERA))->SetCaption("CAMERA");
 		((CBtnEnh*)GetDlgItem(IDC_MAIN_EXIT))->SetCaption("EXIT");
+		((CBtnEnh*)GetDlgItem(IDC_BUT_COMM))->SetCaption("COMM");
 	}
 	else if(SystemINIFiles.m_strLanguage =="KOREAN")
 	{
@@ -193,6 +195,7 @@ void CCUONView::OnButtonCheck()
 		((CBtnEnh*)GetDlgItem(IDC_BUT_GEM))->SetCaption("SECS/GEM");
 		((CBtnEnh*)GetDlgItem(IDC_BUT_CAMERA))->SetCaption("카메라");
 		((CBtnEnh*)GetDlgItem(IDC_MAIN_EXIT))->SetCaption("종료");
+		((CBtnEnh*)GetDlgItem(IDC_BUT_COMM))->SetCaption("통신환경");
 	}
 	((CBtnEnh*)GetDlgItem(IDC_MAIN_EXIT))->SetPicture("..\\..\\Button\\EXIT.png");
 	

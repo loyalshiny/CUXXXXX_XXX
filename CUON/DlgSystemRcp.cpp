@@ -6,9 +6,38 @@
 #include "DlgSystemRcp.h"
 #include "afxdialogex.h"
 
-
 // DlgSystemRcp 대화 상자
-
+/*
+ * Button Control Styles
+ */
+#define BS_PUSHBUTTON       0x00000000L
+#define BS_DEFPUSHBUTTON    0x00000001L
+#define BS_CHECKBOX         0x00000002L
+#define BS_AUTOCHECKBOX     0x00000003L
+#define BS_RADIOBUTTON      0x00000004L
+#define BS_3STATE           0x00000005L
+#define BS_AUTO3STATE       0x00000006L
+#define BS_GROUPBOX         0x00000007L
+#define BS_USERBUTTON       0x00000008L
+#define BS_AUTORADIOBUTTON  0x00000009L
+#define BS_OWNERDRAW        0x0000000BL
+#define BS_LEFTTEXT         0x00000020L
+#if(WINVER >= 0x0400)
+#define BS_TEXT             0x00000000L
+#define BS_ICON             0x00000040L
+#define BS_BITMAP           0x00000080L
+#define BS_LEFT             0x00000100L
+#define BS_RIGHT            0x00000200L
+#define BS_CENTER           0x00000300L
+#define BS_TOP              0x00000400L
+#define BS_BOTTOM           0x00000800L
+#define BS_VCENTER          0x00000C00L
+#define BS_PUSHLIKE         0x00001000L
+#define BS_MULTILINE        0x00002000L
+#define BS_NOTIFY           0x00004000L
+#define BS_FLAT             0x00008000L
+#define BS_RIGHTBUTTON      BS_LEFTTEXT
+#endif /* WINVER >= 0x0400 */
 IMPLEMENT_DYNAMIC(DlgSystemRcp, CDialogEx)
 
 DlgSystemRcp::DlgSystemRcp(CWnd* pParent /*=nullptr*/)
@@ -33,6 +62,7 @@ BEGIN_MESSAGE_MAP(DlgSystemRcp, CDialogEx)
 	ON_WM_TIMER()
 	ON_BN_CLICKED(IDOK, &DlgSystemRcp::OnBnClickedOk)
 	ON_BN_CLICKED(IDCANCEL, &DlgSystemRcp::OnBnClickedCancel)
+//	ON_WM_LBUTTONUP()
 END_MESSAGE_MAP()
 
 
@@ -78,6 +108,30 @@ BOOL DlgSystemRcp::PreTranslateMessage(MSG* pMsg)
 			return TRUE;
 		else if (pMsg->wParam == VK_RETURN)
 			return TRUE;
+	}
+	//TCHAR szTemp[0xFF];
+	//memset(szTemp, '\0', 0xFF);
+	//RegReadString(HKEY_CURRENT_USER, REGISTRY_KEY, _T("KEYBOARD"), szTemp, 0xFF);//가상키보드 구현
+
+	if (pMsg->message == WM_LBUTTONUP /*&& _ttoi(szTemp) == 1*/)///20190506 PCI
+	{
+		UINT nID = GetFocus()->GetDlgCtrlID();
+		CString strTemp;
+		GetDlgItemText(nID, strTemp);
+		
+
+		
+		//if (nID >= 2035 && nID <= 2068)
+		//{
+			//CFuncNumberInput FuncNo;
+			//FuncNo.SetNo(nID);
+			//if (IDOK == FuncNo.DoModal())
+			//{
+				//SetDlgItemText(nID, FuncNo.m_cInputString);
+			//}
+		//}
+
+		return true;
 	}
 	
 
@@ -301,3 +355,10 @@ void DlgSystemRcp::OnButtonCheck()
 	}
 
 }
+
+//void DlgSystemRcp::OnLButtonUp(UINT nFlags, CPoint point)
+//{
+//	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+//
+//	CDialogEx::OnLButtonUp(nFlags, point);
+//}
