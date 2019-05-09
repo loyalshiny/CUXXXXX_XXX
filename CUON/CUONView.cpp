@@ -39,6 +39,7 @@ CCUONView::CCUONView() noexcept
 	: CFormView(IDD_CUON_FORM)
 {
 	// TODO: 여기에 생성 코드를 추가합니다.
+	//
 	m_pDlgMain = NULL;
 	m_pDlgGem = NULL;
 	m_pDlgSystemSetting = NULL;
